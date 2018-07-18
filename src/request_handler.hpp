@@ -12,6 +12,9 @@
 #define HTTP_SERVER4_FILE_HANDLER_HPP
 
 #include <string>
+#include <regex>
+#include <map>
+#include <functional>
 
 namespace server4 {
 
@@ -22,11 +25,14 @@ struct request;
 class request_handler
 {
 public:
-  /// Construct with a directory containing files to be served.
-  explicit request_handler();
+  request_handler();
+    virtual ~request_handler() {}
 
   /// Handle a request and produce a reply.
   void operator()(const request& req, reply& rep);
+    
+    void route(const std::string &method, const std::regex &regex, const std::function<void(request&, reply&)> &fun);
+    void route(const std::string &method, const std::regex &regex, const std::function<void(request&, reply&)> &fun, int priority);
 
 private:
   /// The directory containing the files to be served.
@@ -35,6 +41,8 @@ private:
   /// Perform URL-decoding on a string. Returns false if the encoding was
   /// invalid.
   static bool url_decode(const std::string& in, std::string& out);
+    
+    std::map<std::string, std::map<int, std::pair<std::regex, std::function<void(request&, reply&)>>>> route_map;
 };
 
 } // namespace server4

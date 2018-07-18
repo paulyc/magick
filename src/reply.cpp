@@ -118,7 +118,7 @@ std::vector<boost::asio::const_buffer> reply::to_buffers()
 
 namespace stock_replies {
 
-const char ok[] = "";
+const char ok[] = "OK";
 const char created[] =
   "<html>"
   "<head><title>Created</title></head>"

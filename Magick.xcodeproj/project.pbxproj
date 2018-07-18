@@ -13,7 +13,6 @@
 		5F6476E720FEC4D9007A8482 /* reply.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F6476E120FEC4D9007A8482 /* reply.cpp */; };
 		5F6476E820FEC4D9007A8482 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F6476E220FEC4D9007A8482 /* main.cpp */; };
 		5F6476E920FEC4D9007A8482 /* server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F6476E320FEC4D9007A8482 /* server.cpp */; };
-		5F6476F520FEC5D3007A8482 /* router.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F6476F320FEC5D3007A8482 /* router.cpp */; };
 		5F6476F920FEC9C0007A8482 /* client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5F6476F720FEC9C0007A8482 /* client.cpp */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +43,6 @@
 		5F6476F020FEC522007A8482 /* request_parser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = request_parser.hpp; sourceTree = "<group>"; };
 		5F6476F120FEC523007A8482 /* server.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = server.hpp; sourceTree = "<group>"; };
 		5F6476F220FEC523007A8482 /* request_handler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = request_handler.hpp; sourceTree = "<group>"; };
-		5F6476F320FEC5D3007A8482 /* router.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = router.cpp; sourceTree = "<group>"; };
-		5F6476F420FEC5D3007A8482 /* router.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = router.hpp; sourceTree = "<group>"; };
 		5F6476F620FEC61C007A8482 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5F6476F720FEC9C0007A8482 /* client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = client.cpp; sourceTree = "<group>"; };
 		5F6476F820FEC9C0007A8482 /* client.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = client.hpp; sourceTree = "<group>"; };
@@ -100,8 +97,6 @@
 				5F6476E120FEC4D9007A8482 /* reply.cpp */,
 				5F6476E220FEC4D9007A8482 /* main.cpp */,
 				5F6476E320FEC4D9007A8482 /* server.cpp */,
-				5F6476F320FEC5D3007A8482 /* router.cpp */,
-				5F6476F420FEC5D3007A8482 /* router.hpp */,
 				5F6476F720FEC9C0007A8482 /* client.cpp */,
 				5F6476F820FEC9C0007A8482 /* client.hpp */,
 			);
@@ -175,7 +170,6 @@
 				5F6476E520FEC4D9007A8482 /* request_handler.cpp in Sources */,
 				5F6476F920FEC9C0007A8482 /* client.cpp in Sources */,
 				5F6476E420FEC4D9007A8482 /* mime_types.cpp in Sources */,
-				5F6476F520FEC5D3007A8482 /* router.cpp in Sources */,
 				5F6476E720FEC4D9007A8482 /* reply.cpp in Sources */,
 				5F6476E820FEC4D9007A8482 /* main.cpp in Sources */,
 				5F6476E620FEC4D9007A8482 /* request_parser.cpp in Sources */,

@@ -12,6 +12,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <regex>
 #include <boost/lexical_cast.hpp>
 #include "mime_types.hpp"
 #include "reply.hpp"
@@ -66,17 +67,29 @@ void request_handler::operator()(const request& req, reply& rep)
   }*/
 
   // Fill out the reply to be sent to the client.
-  rep.status = reply::ok;
+  rep = reply::stock_reply(reply::ok);
+    
   //char buf[512];
   //while (is.read(buf, sizeof(buf)).gcount() > 0)
   //  rep.content.append(buf, is.gcount());
-    rep.content.append("Hello");
+    
+   /* rep.content.append("Hello");
   rep.headers.resize(2);
   rep.headers[0].name = "Content-Length";
   rep.headers[0].value = boost::lexical_cast<std::string>(rep.content.size());
   rep.headers[1].name = "Content-Type";
-  rep.headers[1].value = mime_types::extension_to_type("txt");
+  rep.headers[1].value = mime_types::extension_to_type("txt");*/
 }
+    
+    void request_handler::route(const std::string &method, const std::regex &regex, const std::function<void(request&, reply&)> &fun) {
+        // just set to lowest priority, one "less" than current "lowest"
+        const int priority = this->route_map[method].rbegin()->first + 1;
+        this->route_map[method][priority] = std::pair<std::regex, std::function<void(request&, reply&)>>(regex, fun);
+    }
+    
+    void request_handler::route(const std::string &method, const std::regex &regex, const std::function<void(request&, reply&)> &fun, int priority) {
+        this->route_map[method][priority] = std::pair<std::regex, std::function<void(request&, reply&)>>(regex, fun);
+    }
 
 bool request_handler::url_decode(const std::string& in, std::string& out)
 {
